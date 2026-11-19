@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root {
+  --ink: #688dcc;
+  --muted: #000000;
+  --line: #d9dde2;
+  --surface: #ffffff;
+  --page: #f0f1f3;
+  --soft: #f7f8f9;
+  --accent: #050505;
+  --accent-dark: #3d84e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: rgb(172, 172, 162);
+  color: var(--ink);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.page {
+  padding: 48px 18px;
+}
+
+.form-card {
+  width: min(100%, 850px);
+  margin: 0 auto;
+  padding: 42px 48px 28px;
+  background: var(--surface);
+  border: 1px solid #e4e6e9;
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(143, 144, 145, 0.08);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 17px;
+  border-radius: 12px;
+  background: var(--accent-dark);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #858b93;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+legend {
+  padding: 0 10px;
+  color: #353a42;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 18px;
+}
+
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field > label,
+.group-label {
+  color: #343941;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.required {
+  color: #555c65;
+  font-weight: 800;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 13px;
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+input[type="file"] {
+  padding: 9px 10px !important;
+  background: var(--soft) !important;
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #727983 !important;
+  box-shadow: 0 0 0 3px rgba(100, 108, 118, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0a5ac;
+}
+
+small {
+  color: #858b93;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.group-field {
+  margin-top: 22px;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b515a;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.choice input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #454b54;
+  cursor: pointer;
+}
+
+.required-note {
+  margin: 22px 0 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.submit-button {
+  display: flex;
+  width: 100%;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent-dark);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.submit-button:hover {
+  background: #454b54;
+  transform: translateY(-1px);
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid #aeb4bc;
+  outline-offset: 3px;
+}
+
+footer {
+  margin-top: 24px;
+  color: #f14400;
+  text-align: center;
+  font-size: 11px;
+}
+
+footer span {
+  padding: 0 5px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 20px 10px;
+  }
+
+  .form-card {
+    padding: 28px 16px 22px;
+    border-radius: 13px;
+  }
+
+  fieldset {
+    padding: 19px 14px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .choice-row {
+    gap: 13px 17px;
+  }
+}
